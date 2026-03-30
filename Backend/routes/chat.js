@@ -1,7 +1,6 @@
 import express from "express";
 import Thread from "../models/Thread.js";
 import getGeminiApiResponse from "../utils/gemini.js";
-import { authMiddleware } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 

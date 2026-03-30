@@ -3,19 +3,26 @@ import express from "express";
 import cors from "cors";
 import mongoose, { connect } from "mongoose";
 import chatRoutes from "./routes/chat.js";
-import authRoutes from "./routes/authRoutes.js";
+//import path from "path";
 
 
 
 const app = express();
 const port = process.env.PORT || 3000;
+//const _dirname=path.resolve();
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use("/api", chatRoutes);
-app.use("/api/auth", authRoutes);
+
+
+// app.use(express.static(path.join(_dirname,"/Frontend/dist")))
+// app.use(express.static(path.join(_dirname, "Frontend/dist")));
+// app.get("*", (_req, res) => {
+//   res.sendFile(path.resolve(_dirname, "Frontend", "dist", "index.html"));
+// });
 
 
 const connectDB = async () => {
