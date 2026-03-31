@@ -71,7 +71,7 @@ router.post("/chat", async(req,res)=>{
     const {threadId, message} = req.body;    
     
     if(!threadId ||!message){
-         res.status(400).json({error:"Thread ID and messages are required"});
+        return res.status(400).json({error:"Thread ID and messages are required"});
     }
 
     try {

@@ -20,6 +20,7 @@ export default function ChatWindow() {
   const[isOpen,setIsOpen]=useState(false);
 
   const getReply = async () => {
+       if (!prompt.trim()) return;
     setLoading(true)
     setNewChat(false)
     
